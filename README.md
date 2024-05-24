@@ -1,8 +1,139 @@
+# Gentleman.Dots ✨💻🔧
+
+## Description
+
+Welcome to Gentleman.Dots! This repository offers a comprehensive solution for a highly productive Neovim development environment. It encompasses customized configurations, specific plugins, and key mappings aimed at enhancing efficiency. Based on @Gentleman-Programming's setup and harnessing the power of [LazyVim](https://github.com/LazyVim/LazyVim), it simplifies and optimizes the Neovim experience. プログラム、コード、リファクタリング 
+
+## Previous Steps
+
+### Install WSL ([Microsoft WSL Installation Guide](https://learn.microsoft.com/en-us/windows/wsl/install)) 🖥️
+
+```bash
+wsl --install
+wsl --set-default-version 2
+```
+
+### Install HomeBrew 🍺
+Package Manager
+
+```bash
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+If it doesn't work, try:
+
+```bash
+set install_script (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+```
+
+#### Include HomeBrew Path
+Consider the shell you are using to choose the correct ConfigFile (zsh, bash, ...):
+
+```bash
+echo $SHELL
+```
+Automatic command to detect the user:
+
+```bash
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+### Install build-essentials for LINUX 💻
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install build-essential
+```
+
+### Install NVIM 📝
+```bash
+brew install nvim
+```
+
+### Install NODE & NPM 🌐
+
+```bash
+brew install node
+brew install npm
+```
+
+### Install GIT 🌱
+
+```bash
+brew install git
+```
+# Optional
+Free choice of shell 
+### Install FISH 🐟
+
+```bash
+brew install fish
+
+// set as default:
+
+which fish
+// this will return a path, let‘s call it whichFishResultingPath
+
+// add it as an available shell
+echo whichFishResultingPath | sudo tee -a /etc/shells
+
+// set it as default
+sudo chsh -s wichFishResultingPath
+```
+
+### Install OhMyFish 🐚
+
+```bash
+curl -L https://get.oh-my.fish | fish
+```
+
+#
+
+### Install the following dependencies 🛠️
+
+```bash
+brew install gcc
+brew install fzf
+brew install fd
+brew install ripgrep
+```
+
+### Install Zellij 🖥️
+
+```bash
+brew install zellij
+```
+If you encounter any issues with this method, use "Cargo" to install Zellij
+
+```bash
+// 1. if installed with brew:
+brew uninstall zellij 
+
+// 2. Install Rust (needed for Cargo)
+curl https://sh.rustup.rs -sSf | sh
+
+// 3. Install Zellij using cargo
+cargo install --locked zellij
+
+```
+
+# Optional 
+### Install WezTerm 💻
+
+```bash
+https://wezfurlong.org/wezterm/index.html
+```
+#
+### Install your chosen font (.zip) 
+[Download here](https://github.com/ryanoasis/nerd-fonts/releases/)
+
+## Folder `GentlemanNvim` 📁
+
 # Gentleman.Dots
 
 ## Description
 
-This repository contains customized configurations for the Neovim development environment, including specific plugins and keymaps to enhance productivity. It makes use of [LazyVim](https://github.com/LazyVim/LazyVim) as a preconfigured set of plugins and settings to simplify the use of Neovim.
+This repository is your all-in-one solution for a highly productive Neovim development environment. It contains custom configurations, specific plugins, and key mappings to enhance efficiency. Based on @Gentleman-Programming's setup and leveraging [LazyVim](https://github.com/LazyVim/LazyVim), it simplifies and optimizes the Neovim experience. プログラム、コード、リファクタリング ✨💻🔧
 
 ## Previous Steps
 
@@ -14,18 +145,24 @@ wsl --set-default-version 2
 ```
 
 ### Install HomeBrew
+Gestor de paquetes --->
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-// if it doesn't work try using
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+If it doesn't work try using
+``` bash
 set install_script (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
 ```
 
 #### Include HomeBrew Path
-```bash
-Change 'YourUserName' with the device username
+Tomar en cuenta la shell q se esta usando, para tomar el ConfigFile(zsh-bash,...) correcto:
 
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/YourUserName/.bashrc
+```bash
+echo $SHELL
+```
+Comando automatico para detecar al usuario:
+```bash
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/$USER/.bashrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ```
 
@@ -53,7 +190,8 @@ brew install npm
 ```bash
 brew install git
 ```
-
+# Opcional
+Libre elecion de shell 
 ### Install FISH
 
 ```bash
@@ -77,6 +215,7 @@ sudo chsh -s wichFishResultingPath
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
+#
 
 ### Install the following dependencies
 
@@ -95,28 +234,28 @@ brew install zellij
 If you find any issues with this method, use "Cargo" to install Zellij
 
 ```bash
-// if installed with brew:
+// 1. if installed with brew:
 brew uninstall zellij 
 
-// Install Rust (needed for Cargo)
+// 2. Install Rust (needed for Cargo)
 curl https://sh.rustup.rs -sSf | sh
 
-// Install Zellij using cargo
+// 3. Install Zellij using cargo
 cargo install --locked zellij
 
 ```
 
+# OPCIONAL 
 ### Install WezTerm
 
 ```bash
 https://wezfurlong.org/wezterm/index.html
 ```
-
-### Install Iosevka Term Nerd Font
-`https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/IosevkaTerm.zip`
+#
+### Install la font de tu eleccion(.zip)
+`https://github.com/ryanoasis/nerd-fonts/releases/`
 
 ## Folder `GentlemanNvim`
-
 ### Configuration Transfer
 
 ```bash
