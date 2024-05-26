@@ -39,6 +39,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ```
 
 ### Install build-essentials for LINUX 💻
+Tomar en cuenta la Distro!!!!!!!!!!!
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
